@@ -3339,7 +3339,7 @@
                     return;
                 }
                 movespeed = basemovespeed * 1;
-                Log("Move speed: 1x.");
+                Log(platform.StringFormat(language.MoveSpeed(), platform.IntToString(1)));
             }
             if (eKey == GetKey(GlKeys.F2))
             {
