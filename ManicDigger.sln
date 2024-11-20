@@ -1,18 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-# SharpDevelop 5.1
-VisualStudioVersion = 12.0.20827.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManicDigger", "ManicDigger\ManicDigger.csproj", "{650BC108-C744-4DA1-AEFD-CD8F011483B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManicDigger", "ManicDigger\ManicDigger.csproj", "{650BC108-C744-4DA1-AEFD-CD8F011483B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManicDiggerServer", "ManicDiggerServer\ManicDiggerServer.csproj", "{46D2CD51-9603-48B4-87D1-7377B5F1E51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManicDiggerServer", "ManicDiggerServer\ManicDiggerServer.csproj", "{46D2CD51-9603-48B4-87D1-7377B5F1E51E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManicDiggerLib", "ManicDiggerLib\ManicDiggerLib.csproj", "{08056549-3BE8-454C-A09A-67EDCDC81261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManicDiggerLib", "ManicDiggerLib\ManicDiggerLib.csproj", "{08056549-3BE8-454C-A09A-67EDCDC81261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdMonsterEditor", "MdMonsterEditor\MdMonsterEditor.csproj", "{DE9E0B36-6171-4DA3-9495-0A82445B6D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MdMonsterEditor", "MdMonsterEditor\MdMonsterEditor.csproj", "{DE9E0B36-6171-4DA3-9495-0A82445B6D74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptingApi", "ScriptingApi\ScriptingApi.csproj", "{A3582245-A1D1-4135-BA90-8EFD7830DA83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScriptingApi", "ScriptingApi\ScriptingApi.csproj", "{A3582245-A1D1-4135-BA90-8EFD7830DA83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,5 +51,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAD0A892-997C-4DCA-BC8C-8A8B15D54278}
 	EndGlobalSection
 EndGlobal

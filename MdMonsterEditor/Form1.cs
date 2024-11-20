@@ -53,7 +53,9 @@ namespace MdMonsterEditor
 
 		private void RichTextBoxContextMenu(RichTextBox richTextBox)
 		{
+			// TODO Metoda ContextMenu nie jest już obsługiwana. Zamiast tego użyj metody ContextMenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
 			ContextMenu cm = new ContextMenu();
+			// TODO Metoda MenuItem nie jest już obsługiwana. Zamiast tego użyj metody ToolStripMenuItem. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
 			MenuItem mi = new MenuItem("Cut");
 			mi.Click += (a, b) =>
 			{
@@ -61,6 +63,7 @@ namespace MdMonsterEditor
 			};
 			cm.MenuItems.Add(mi);
 
+			// TODO Metoda MenuItem nie jest już obsługiwana. Zamiast tego użyj metody ToolStripMenuItem. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
 			mi = new MenuItem("Copy");
 			mi.Click += (a, b) =>
 			{
@@ -68,6 +71,7 @@ namespace MdMonsterEditor
 			};
 			cm.MenuItems.Add(mi);
 
+			// TODO Metoda MenuItem nie jest już obsługiwana. Zamiast tego użyj metody ToolStripMenuItem. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
 			mi = new MenuItem("Paste");
 			mi.Click += (a, b) =>
 			{

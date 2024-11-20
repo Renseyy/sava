@@ -47,6 +47,7 @@ public class ManicDiggerProgram
 			System.Environment.CurrentDirectory = appPath;
 		}
 
+		// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
 		MainMenu mainmenu = new MainMenu();
 		GamePlatformNative platform = new GamePlatformNative();
 		platform.SetExit(exit);
@@ -67,7 +68,8 @@ public class ManicDiggerProgram
 		}
 	}
 
-	void ReadArgs(MainMenu mainmenu, string[] args)
+	void ReadArgs(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu mainmenu, string[] args)
 	{
 		if (args.Length > 0)
 		{

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Jint.Delegates;
 
 namespace ManicDigger.Server
 {

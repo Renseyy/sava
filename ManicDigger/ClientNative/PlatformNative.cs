@@ -18,6 +18,7 @@ using OpenTK;
 using OpenTK.Audio;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
+using OpenTK.Windowing.Common;
 
 namespace ManicDigger.ClientNative
 {
@@ -994,7 +995,7 @@ namespace ManicDigger.ClientNative
 		public override AudioData AudioDataCreate(byte[] data, int dataLength)
 		{
 			StartAudio();
-			return audio.GetSampleFromArray(data);
+			return AudioOpenAl.GetSampleFromArray(data);
 		}
 
 		public override bool AudioDataLoaded(AudioData data)
@@ -1233,7 +1234,7 @@ namespace ManicDigger.ClientNative
 			window.Keyboard.KeyRepeat = true;
 			window.KeyDown += new EventHandler<KeyboardKeyEventArgs>(game_KeyDown);
 			window.KeyUp += new EventHandler<KeyboardKeyEventArgs>(game_KeyUp);
-			window.KeyPress += new EventHandler<OpenTK.KeyPressEventArgs>(game_KeyPress);
+			window.KeyPress += new EventHandler<OpenTK.Input.KeyPressEventArgs>(game_KeyPress);
 			window.MouseDown += new EventHandler<MouseButtonEventArgs>(Mouse_ButtonDown);
 			window.MouseUp += new EventHandler<MouseButtonEventArgs>(Mouse_ButtonUp);
 			window.MouseMove += new EventHandler<MouseMoveEventArgs>(Mouse_Move);
@@ -1241,7 +1242,7 @@ namespace ManicDigger.ClientNative
 			window.RenderFrame += new EventHandler<OpenTK.FrameEventArgs>(window_RenderFrame);
 			window.Closed += new EventHandler<EventArgs>(window_Closed);
 			window.TargetRenderFrequency = 0;
-			window.Title = "Manic Digger";
+			window.Title = "Sava";
 		}
 
 		void window_Closed(object sender, EventArgs e)

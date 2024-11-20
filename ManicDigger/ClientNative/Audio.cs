@@ -6,6 +6,7 @@ using OpenTK.Audio;
 using System.Threading;
 using System.Diagnostics;
 using OpenTK;
+using OpenTK.Mathematics;
 
 namespace ManicDigger.ClientNative
 {
@@ -14,35 +15,35 @@ namespace ManicDigger.ClientNative
 		public GameExit d_GameExit;
 		public AudioOpenAl()
 		{
-			try
-			{
-				IList<string> x = AudioContext.AvailableDevices;//only with this line an exception can be catched.
-				context = new AudioContext();
-			}
-			catch (Exception e)
-			{
-				string oalinst = "oalinst.exe";
-				if (File.Exists(oalinst))
-				{
-					try
-					{
-						Process.Start(oalinst, "/s");
-					}
-					catch
-					{
-					}
-				}
-				Console.WriteLine(e);
-			}
+			//	try
+			//	{
+			//		IList<string> x = AudioContext.AvailableDevices;//only with this line an exception can be catched.
+			//		context = new AudioContext();
+			//	}
+			//	catch (Exception e)
+			//	{
+			//		string oalinst = "oalinst.exe";
+			//		if (File.Exists(oalinst))
+			//		{
+			//			try
+			//			{
+			//				Process.Start(oalinst, "/s");
+			//			}
+			//			catch
+			//			{
+			//			}
+			//		}
+			//		Console.WriteLine(e);
+			//	}
 		}
-		AudioContext context;
+		//AudioContext context;
 		// Loads a wave/riff audio file.
 		public static byte[] LoadWave(Stream stream, out int channels, out int bits, out int rate)
 		{
 			if (stream == null)
 				throw new ArgumentNullException("stream");
 
-			using (BinaryReader reader = new BinaryReader(stream))
+            using (BinaryReader reader = new BinaryReader(stream))
 			{
 				// RIFF header
 				string signature = new string(reader.ReadChars(4));
@@ -230,7 +231,7 @@ namespace ManicDigger.ClientNative
 			internal bool Finished;
 		}
 
-		public AudioDataCs GetSampleFromArray(byte[] data)
+		public static AudioDataCs GetSampleFromArray(byte[] data)
 		{
 			Stream stream = new MemoryStream(data);
 			if (stream.ReadByte() == 'R'

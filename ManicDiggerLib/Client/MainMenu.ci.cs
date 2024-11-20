@@ -629,6 +629,7 @@ public class Screen
         WidgetCount = 64;
         widgets = new MenuWidget[WidgetCount];
     }
+    // TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
     internal MainMenu menu;
     public virtual void Render(float dt) { }
     public virtual void OnKeyDown(KeyEventArgs e) { KeyDown(e); }
@@ -1120,12 +1121,14 @@ public class DrawModeEnum
 
 public class MainMenuNewFrameHandler : NewFrameHandler
 {
-    public static MainMenuNewFrameHandler Create(MainMenu l)
+    public static MainMenuNewFrameHandler Create(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu l)
     {
         MainMenuNewFrameHandler h = new MainMenuNewFrameHandler();
         h.l = l;
         return h;
     }
+    // TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
     MainMenu l;
     public override void OnNewFrame(NewFrameEventArgs args)
     {
@@ -1135,12 +1138,14 @@ public class MainMenuNewFrameHandler : NewFrameHandler
 
 public class MainMenuKeyEventHandler : KeyEventHandler
 {
-    public static MainMenuKeyEventHandler Create(MainMenu l)
+    public static MainMenuKeyEventHandler Create(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu l)
     {
         MainMenuKeyEventHandler h = new MainMenuKeyEventHandler();
         h.l = l;
         return h;
     }
+    // TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
     MainMenu l;
     public override void OnKeyDown(KeyEventArgs e)
     {
@@ -1159,12 +1164,14 @@ public class MainMenuKeyEventHandler : KeyEventHandler
 
 public class MainMenuMouseEventHandler : MouseEventHandler
 {
-    public static MainMenuMouseEventHandler Create(MainMenu l)
+    public static MainMenuMouseEventHandler Create(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu l)
     {
         MainMenuMouseEventHandler h = new MainMenuMouseEventHandler();
         h.l = l;
         return h;
     }
+    // TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
     MainMenu l;
 
     public override void OnMouseDown(MouseEventArgs e)
@@ -1190,12 +1197,14 @@ public class MainMenuMouseEventHandler : MouseEventHandler
 
 public class MainMenuTouchEventHandler : TouchEventHandler
 {
-    public static MainMenuTouchEventHandler Create(MainMenu l)
+    public static MainMenuTouchEventHandler Create(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu l)
     {
         MainMenuTouchEventHandler h = new MainMenuTouchEventHandler();
         h.l = l;
         return h;
     }
+    // TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
     MainMenu l;
 
     public override void OnTouchStart(TouchEventArgs e)

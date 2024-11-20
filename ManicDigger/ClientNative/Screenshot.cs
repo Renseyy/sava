@@ -6,6 +6,7 @@ using OpenTK.Graphics;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using System.IO;
+using OpenTK.Windowing.Desktop;
 
 namespace ManicDigger.ClientNative
 {
@@ -29,13 +30,13 @@ namespace ManicDigger.ClientNative
         // Returns a System.Drawing.Bitmap with the contents of the current framebuffer
         public Bitmap GrabScreenshot()
         {
-            if (GraphicsContext.CurrentContext == null)
-                throw new GraphicsContextMissingException();
+            //if (GLFWGraphicsContext.CurrentContext == null)
+            //    throw new GraphicsContextMissingException();
 
-            Bitmap bmp = new Bitmap(d_GameWindow.ClientSize.Width, d_GameWindow.ClientSize.Height);
+            var bmp = new Bitmap(d_GameWindow.ClientSize[0], d_GameWindow.ClientSize[1]);
             System.Drawing.Imaging.BitmapData data =
-                bmp.LockBits(d_GameWindow.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-            GL.ReadPixels(0, 0, d_GameWindow.ClientSize.Width, d_GameWindow.ClientSize.Height, OpenTK.Graphics.OpenGL.PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
+                bmp.LockBits((Rectangle)d_GameWindow.ClientRectangle, System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            GL.ReadPixels(0, 0, d_GameWindow.ClientSize[0], d_GameWindow.ClientSize[1], OpenTK.Graphics.OpenGL.PixelFormat.Bgr, PixelType.UnsignedByte, data.Scan0);
             bmp.UnlockBits(data);
 
             bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);

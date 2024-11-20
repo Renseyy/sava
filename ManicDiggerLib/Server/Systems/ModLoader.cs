@@ -12,8 +12,8 @@ namespace ManicDigger.Server
     {
         public ServerSystemModLoader()
         {
-            jintEngine.DisableSecurity();
-            jintEngine.AllowClr = true;
+            //jintEngine.DisableSecurity();
+            //jintEngine.AllowClr = true;
         }
 
         bool started;
@@ -117,7 +117,7 @@ namespace ManicDigger.Server
             return scripts;
         }
 
-        Jint.JintEngine jintEngine = new Jint.JintEngine();
+        Jint.Engine jintEngine = new Jint.Engine();
         Dictionary<string, string> javascriptScripts = new Dictionary<string, string>();
         public void CompileScripts(Dictionary<string, string> scripts, bool restart)
         {
@@ -294,13 +294,13 @@ namespace ManicDigger.Server
 
         void StartJsMods(ModManager m)
         {
-            jintEngine.SetParameter("m", m);
+            jintEngine.SetValue("m", m);
             // TODO: javascript mod requirements
             foreach (var k in javascriptScripts)
             {
                 try
                 {
-                    jintEngine.Run(k.Value);
+                    jintEngine.Execute(k.Value);
                     Console.WriteLine("Loaded mod: {0}", k.Key);
                 }
                 catch

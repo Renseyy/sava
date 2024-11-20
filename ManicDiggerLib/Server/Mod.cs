@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ProtoBuf;
-using Jint.Delegates;
-using System.Net;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace ManicDigger.Server
 {
-	public class ModManager1 : ModManager
+    public class ModManager1 : ModManager
 	{
 		public int GetMaxBlockTypes()
 		{

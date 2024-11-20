@@ -12,7 +12,6 @@ using System.Xml.Serialization;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Jint.Delegates;
 using System.Diagnostics;
 using ManicDigger.Common;
 

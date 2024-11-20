@@ -75,7 +75,8 @@
         DrawWidgets();
     }
 
-    void UseQueryStringIpAndPort(MainMenu menu)
+    void UseQueryStringIpAndPort(// TODO Metoda MainMenu nie jest już obsługiwana. Zamiast tego użyj metody MenuStrip. Aby uzyskać więcej szczegółów, sprawdź https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
+MainMenu menu)
     {
         if (queryStringChecked)
         {

@@ -2,7 +2,6 @@
 using System.IO;
 using ProtoBuf;
 using System.Collections.Generic;
-using Jint.Delegates;
 
 namespace ManicDigger.Server
 {

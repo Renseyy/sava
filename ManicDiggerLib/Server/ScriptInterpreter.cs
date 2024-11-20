@@ -21,16 +21,16 @@ namespace ManicDigger.Server
 
 	public class JavaScriptInterpreter : IScriptInterpreter
 	{
-		private JintEngine m_engine;
+		private Engine m_engine;
 
 		public JavaScriptInterpreter()
 		{
 			Console.Write("Loading JavaScript interpreter: ");
 			try
 			{
-				m_engine = new JintEngine();
-				m_engine.AllowClr = false;
-				m_engine.DisableSecurity();
+				m_engine = new();
+				//OptionsExtensions.AllowClr(true);
+    //            m_engine.DisableSecurity();
 				Console.WriteLine("done.");
 			}
 			catch (Exception e)
@@ -52,7 +52,7 @@ namespace ManicDigger.Server
 		{
 			try
 			{
-				result = m_engine.Run(script);
+				result = m_engine.Evaluate(script).ToObject();
 			}
 			catch (Exception e)
 			{
@@ -71,12 +71,12 @@ namespace ManicDigger.Server
 
 		public void SetVariable(string name, object value)
 		{
-			m_engine.SetParameter(name, value);
+			m_engine.SetValue(name, value);
 		}
 
 		public void SetFunction(string name, Delegate function)
 		{
-			m_engine.SetFunction(name, function);
+			m_engine.SetValue(name, function);
 		}
 	}
 }
